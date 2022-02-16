@@ -1,0 +1,36 @@
+
+
+    h1{
+      background-color:pink;
+      color:rgb(134, 4, 109);
+
+    }
+
+    .Front-end-h2
+    {
+      background-color: lightgrey;
+      color: blue;
+      width: 250px;
+    }
+
+    .back-end-h2
+    {
+      background-color: black;
+      color: white;
+      width: 250px;
+    }
+
+    ol li ul.JavaScript li
+    {
+      color:red;
+    }
+
+    ol li ul li.supports
+    {
+      color: blue;
+    }
+
+    blockquote
+    {
+      color: red;
+    }

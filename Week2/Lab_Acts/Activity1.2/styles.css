@@ -1,0 +1,74 @@
+*
+{
+  font-family: cursive;
+}
+
+    h2, h1, a, blockquote, cite, p, img, h4
+    {
+      display: block;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1{
+      padding: 40px 40px ;
+      background-color:pink;
+      color:rgb(134, 4, 109);
+      width: 500px;
+      border-radius: 10px;
+      padding: 10px;
+      border: 2px solid rgb(171, 0, 100);
+    }
+
+
+    ol{
+      width: 500px ;
+      margin-left: auto;
+      margin-right:auto;
+
+    }
+    .Front-end-h2
+    {
+      background-color: lightgrey;
+      color: blue;
+      width: 250px;
+    }
+
+    .back-end-h2
+    {
+      background-color: black;
+      color: white;
+      width: 250px;
+    }
+
+    ol li ul.JavaScript li
+    {
+      color:red;
+    }
+
+    ol li ul li.supports, ol li ul li.supports + li
+    {
+      color: blue;
+    }
+
+    blockquote
+    {
+
+      color: red;
+    }
+
+    .logo-p
+    {
+      background-color: #ddd;
+      border: 3px solid rgb(122, 122, 122);
+      padding: 20px 20px ;
+      width: 100px;
+      border-radius:30px;
+      text-decoration: underline;
+      font-style: italic;
+      font-weight: bold;
+      color:rgb(0, 104, 138);
+      margin-left: auto;
+      margin-right: auto;
+    }
