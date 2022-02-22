@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Activity 1</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <h1 class="title">Forms: Hijacking Websites</h1>
+    <hr>
+
+    <div class="Container">
+      <!-- Top buttons -->
+      <div class="buttons">
+          <button class="btn" type="button" name="button">Click me</button>
+          <button class="btn" type="button" name="button">Click me</button>
+      </div>
+
+      <!-- Reddit -->
+      <div class="Reddit" >
+        <form class="" action="https://www.reddit.com/search/?" method="GET">
+          <fieldset>
+              <legend class="FormTitle">HIJACKING REDDIT</legend>
+              <label>Search Reddit:</label>
+
+              <input type="text" name="q" placeholder="Type Something..." required>
+
+              <input type="submit" name="Search" value="Search">
+          </fieldset>
+        </form>
+      </div>
+
+      <!-- Google -->
+      <div class="Google" >
+        <form  action="https://www.google.com/search?q=cats" target="_blank" method="GET">
+          <fieldset>
+              <legend class="FormTitle">HIJACKING Google</legend>
+              <label>Search Google:</label>
+
+              <input  type="text" name="q" placeholder="Type Something.." required>
+
+              <input  type="submit" name="Search" value="Search">
+          </fieldset>
+        </form>
+      </div>
+
+
+      <!-- Youtube -->
+      <div class="Youtube" >
+          <form class="" action="https://www.youtube.com/results?" target="_blank" method="GET">
+            <fieldset>
+                <legend class="FormTitle">HIJACKING Youtube</legend>
+                <label>Search Youtube:</label>
+
+                <input type="text" name="q" placeholder="Type Something..." required>
+                <input type="submit" name="Search" value="Search">
+            </fieldset>
+          </form>
+        </div>
+
+
+        <span>Hold Me</span>
+    </div>
+
+  </body>
+</html>
