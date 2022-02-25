@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="CSS/applyStyle.css">
+  </head>
+
+  <body>
+
+    <h1>Application Form !</h1>
+
+  <form action="index.html" method="get">
+    <fieldset class="PI">
+      <legend>Personal Information</legend>
+
+      <span>Username</span>
+      <input type="text" name="user" value="" placeholder="Type your username" required>
+
+      <span>Password</span>
+      <input type="password" name="pass" value="" placeholder="Type your password" required>
+
+      <span>Email</span>
+      <input type="email" name="mail" value="" placeholder="Type your Email">
+
+      <div  class="gen">
+
+        <span >Gender</span>
+        <select name="gender">
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select>
+    </div>
+
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+      <legend>Your Favourites</legend>
+      <div class="fav">
+      <span>What language you want to learn the most?</span>
+
+      <br>
+      <input type="radio" id="html" name="lang" value="H">
+      <label for="html">HTMl</label>
+      <br>
+
+      <input type="radio" id="css" name="lang" value="C">
+      <label for="css">CSS</label>
+      <br>
+
+      <input type="radio" id="Js" name="lang" value="J">
+      <label for="Js">JavaScript</label>
+    </div>
+
+    </fieldset>
+
+     <br>
+
+    <fieldset>
+      <legend>Your Message</legend>
+
+      <span>Describe Your Self Here</span>
+      <textarea name="desc" rows="8" cols="80" placeholder="Start Typing..."></textarea>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+      <legend>Send Answers</legend>
+      <div clsas="rem">
+        <input type="checkbox" name="rem" value="1">
+        <span>Remember My Answers</span>
+      </div>
+      <input type="submit" name="sub" value="Submit">
+    </fieldset>
+
+  </form>
+
+  </body>
+</html>

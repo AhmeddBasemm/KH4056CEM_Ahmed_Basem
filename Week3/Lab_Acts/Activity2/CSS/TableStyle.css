@@ -1,0 +1,61 @@
+*
+{
+  text-align: center;
+  font-family: sans-serif;
+}
+
+h1
+{
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 5px;
+
+  color: red;
+  border: dashed 2px red;
+  border-radius: 100px
+
+}
+
+
+a
+{
+  background-color: DodgerBlue;
+  margin-top: 100px;
+  border: solid 2px DodgerBlue;
+  padding: 10px;
+  text-decoration: none;
+  color: White;
+}
+
+a:hover
+{
+  color: white;
+  border: solid 2px RoyalBlue;
+  background-color: RoyalBlue;
+}
+
+th
+{
+  background-color: rgba(168,241,214,255);
+  padding: 10px;
+  padding-left:  30px;
+  padding-right:  30px;
+  font-size: 17px;
+}
+
+td
+{
+  background-color: rgba(210,248,235,255);
+  padding: 30px;
+  font-size: 15px;
+}
+
+table
+{
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}

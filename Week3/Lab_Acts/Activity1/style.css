@@ -5,7 +5,7 @@
 }
 
 
-.reddit, .google, .youtube, .buttons  {
+.Reddit, .Google, .Youtube, .buttons  {
   display: flex;
   align-items: center ;
   justify-content: center
@@ -73,7 +73,6 @@ cursor: pointer
 }
 
 label {
-
 display:block;
 margin-left: 5%;
 margin-bottom: 10px;

@@ -1,0 +1,103 @@
+*
+{
+  font-family: "Avenir Next LT Pro" , Arial , Tahoma;;
+}
+
+h1 {
+    text-align: center;
+    color: #6d6d6d;
+    font-style: italic;
+    font-variant-caps: all-petite-caps;
+  }
+
+h1:hover {
+      color: rgb(250, 56, 139);
+}
+
+legend
+{
+  color: #74b4ea;
+  padding: 7px;
+  margin-left: 5px;
+  border: solid 2px Lightgrey;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+fieldset
+{
+  display: flex;
+  border: solid 2px Lightgrey;
+  flex-direction: column;
+}
+
+span
+{
+  font-weight: lighter;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding: 5px 5px 5px 0;
+  color: #009ab5;
+}
+
+.gen
+{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.gen span
+{
+  font-style: normal;
+}
+
+.gen select
+{
+  width: 10%;
+}
+
+.PI input
+{
+  border: solid 1px Lightgrey;
+  width: 40%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.rem span
+{
+  font-style: normal;
+}
+
+.fav
+{
+  margin-bottom: 20px
+}
+
+textarea {
+    margin-bottom: 20px;
+    width: 450px;
+    height: 200px;
+    border: 2px solid #dedede;
+}
+
+input[type="submit"] {
+    margin-top: 30px;
+    padding: 10px 15px;
+    background-color: rgb(236, 77, 104);
+    border: 0;
+    color: white;
+    font-family: "Avenir Next LT Pro";
+    border-radius: 60px;
+    font-size: 30px;
+    width: 200px;
+    font-weight: 300;
+    transition: font-size 1s ease-in-out , background-color 1s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(35, 161, 209);
+    font-size: 40px;
+}
