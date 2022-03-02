@@ -3,24 +3,92 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script src="https://kit.fontawesome.com/4a82e10df4.js" crossorigin="anonymous"></script>
+    <!-- Font Awsome-->
+    <!-- <script src="https://kit.fontawesome.com/4a82e10df4.js" crossorigin="anonymous"></script> -->
     <style media="screen">
       li
       {
         list-style: none;
+        width: 25%;
+        padding: 0 calc(25%/6);
       }
       a
       {
         text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        padding: 15px 0px;
+        transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+       }
+       a:hover
+       {
+         background-color: dodgerblue;
+         color: white
+       }
+
+      ul
+      {
+       padding: 0;
+       margin: 0;
+       display: flex;
+       justify-content: center;
+       background: #ddd;
+
+      }
+      body
+      {
+       margin: 0;
+      }
+
+      .dropDownIcon
+      {
+        display:none;
+
+      }
+
+      @media screen and (max-width:570px)
+      {
+
+        ul
+        {
+          flex-direction: column;
+        }
+        .dropDownIcon
+        {
+          display: block;
+          width:10%;
+          margin-left: 90%;
+        }
+        /* .dropDownIcon a
+        {
+        text-align: center;
+        } */
+        li
+        {
+          width: 100%;
+          padding: 0;
+        }
+        nav ul li:not(:nth-child(1)) a{
+          padding-left: 20px;
+          text-align: left;
+          /* box-sizing: border-box; */
+        }
+
       }
     </style>
+
+
 
   </head>
 
   <body>
 
-    <nav>
+    <!-- <nav> -->
       <ul>
+        <!-- Font Awsome -->
+        <!-- <li class="dropDownIcon"><a href="#"><i class="fa-solid fa-circle-chevron-down"></i></a></li> -->
+        <li class="dropDownIcon"><a href="#">&#9776;</a></li>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact Us</a></li>
