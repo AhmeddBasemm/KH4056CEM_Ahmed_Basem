@@ -70,7 +70,7 @@ function CreateNote()
   sn.style.background = color();
   sn.innerHTML = noteText.value;
 
-  sn_div.insertAdjacentElement("beforeend", div_s)
+  sn_div.insertAdjacentElement("beforebegin", div_s)
 
   Sec_NewStickyNote.style.display = "none";
   noteText.value ="";
@@ -82,7 +82,7 @@ function CreateNote()
 
 }
 function typeNote(e) {
-    sn_div = e.parentNode.getElementsByClassName('sn-div')[0];
+    sn_div = e;
     if (Sec_NewStickyNote.style.display == "none"){
         Sec_NewStickyNote.style.display = "flex"
     }
