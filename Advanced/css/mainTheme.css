@@ -1,0 +1,60 @@
+body
+{
+  background-color: #AD8B73;
+}
+
+.main-title-h1
+{
+  color: white;
+}
+
+.svg-settings-btn
+{
+  fill: white;
+}
+
+.board-legend
+{
+  background-color: #CEAB93;
+  color: white;
+  border-color: black;
+}
+
+.board-FS
+{
+  background-color: #E3CAA5;
+  /* background-image: url("../assets/BulletInBoard.jpg"); */
+  /* background-repeat: repeat; */
+}
+
+
+.sn-content
+{
+  background-color: #FFFBE9;
+}
+
+.add-sn-div
+{
+  background-color: rgba(10,10,10,.3);
+}
+
+/* .sn-add-btn
+{
+  stroke: blue;
+  background-color: none;
+} */
+
+.sn-add-btn:hover
+{
+  background-color: rgba(10,10,10,.1);
+}
+
+.section-add-btn
+{
+   stroke: white;
+}
+
+.add-section-div:hover
+{
+  background-color: rgba(10,10,10,.1);
+}
