@@ -32,6 +32,10 @@ body
   transition: fill .2s;
 }
 
+.editable:empty:before {
+    content: attr(data-placeholder);
+}
+
 .svg-settings-btn:hover
 {
   fill: black
@@ -42,7 +46,6 @@ body
 {
   background-color: white;
   margin: 0px;
-  border-radius: 12px;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -54,8 +57,9 @@ body
   border-radius: inherit;
   background-color: inherit;
   font-size: 25px;
-  padding: 0px 10px;
+  padding: 4px 10px;
   border: 1px solid;
+
   /* border-bottom: 0px; */
 }
 
