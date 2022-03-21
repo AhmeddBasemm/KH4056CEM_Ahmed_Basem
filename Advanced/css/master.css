@@ -195,3 +195,19 @@ body
   height: 40px;
 
 }
+
+
+@media screen and (max-width:620px)
+{
+  .board-FS, .sn-div
+  {
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+  }
+  .Editing_buttons
+  {
+    margin: 10px 20px;
+  }
+
+}
