@@ -189,13 +189,62 @@ body
 
 .checkmark
 {
-  margin-top: 20px;
-  fill: rgba(0,225,0,1);
-  width: 40px;
-  height: 40px;
-
+  fill: rgba(255,255,255,.6);
+  width: 30px;
+  height: 30px;
 }
 
+.checkmark:hover
+{
+  fill: rgba(255,255,255,.8);
+}
+.checkmark:focus
+{
+  fill: rgba(255,255,255,1);
+}
+/*
+.chkBtn, .chkBtn:focus
+{
+  width: 40px;
+  background: Transparent;
+  border: none;
+
+} */
+.Editing_buttons
+{
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+.AdvBtn
+{
+  margin: 5px;
+  padding: 10px;
+  background-color: Transparent;
+  border: none;
+  border-radius: 5px;
+}
+.AdvBtn:hover
+{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.AdvBtn:focus
+{
+  background-color: rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.fa-solid
+{
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%
+}
 
 @media screen and (max-width:620px)
 {

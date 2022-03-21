@@ -166,7 +166,6 @@ function action(btn){
 
   if (command =="fontSize")val = prompt("Please Choose a Number Between 1-7","4");
   else if (command =="fontName") val = prompt("Please Choose a Font Family Name", "Times New Roman");
-
   document.execCommand(command,false,val)
 }
 

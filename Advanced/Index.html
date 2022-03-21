@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/NewTheme.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower">
     <script src="https://kit.fontawesome.com/4a82e10df4.js" crossorigin="anonymous"></script>
 
@@ -62,25 +63,28 @@
       <!-- Add Sticky Note -->
       <div class="add-sn-div" style="display:none;">
         <div id="newNoteContent" class="sn-content"  name="sn-content" contenteditable></div>
-        <svg id="donebtn" class="checkmark" viewBox="0 0 512 512">
-        <path d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z"/>
-        </svg>
+        <!-- <button type="button" id="donebtn" class="chkBtn"><i class=" fa-solid fa-check"></i></button> -->
 
         <div class="Editing_buttons">
-          <button class="AdvBtn" id="bold" type="button" name="button">B</button>
-          <button class="AdvBtn" id="underline" type="button" name="button">U</button>
-          <button class="AdvBtn" id="italic" type="button" name="button">i</button>
-          <button class="AdvBtn" id="strikeThrough" type="button" name="button">Strike</button>
-          <button class="AdvBtn" id="insertOrderedList" type="button" name="button">Ordered</button>
-          <button class="AdvBtn" id="insertUnorderedList" type="button" name="button">UnOrdered</button>
-          <button class="AdvBtn" id="indent" type="button" name="button">--></button>
-          <button class="AdvBtn" id="outdent" type="button" name="button"><--</button>
-          <button class="AdvBtn" id="undo" type="button" name="button">undo</button>
-          <button class="AdvBtn" id="redo" type="button" name="button">redo</button>
-          <button class="AdvBtn" id="fontSize" type="button" name="button">FS</button>
-          <button class="AdvBtn" id="fontName" type="button" name="button">FN</button>
+          <button class="AdvBtn" id="bold" type="button" ><i class="fa-solid fa-bold"></i></button>
+          <button class="AdvBtn" id="underline" type="button" ><i class="fa-solid fa-underline"></i></button>
+          <button class="AdvBtn" id="italic" type="button" ><i class="fa-solid fa-italic"></i></button>
+          <button class="AdvBtn" id="strikeThrough" type="button" ><i class="fa-solid fa-strikethrough"></i></button>
+          <button class="AdvBtn" id="insertOrderedList" type="button" ><i class="fa-solid fa-list-ol"></i></button>
+          <button class="AdvBtn" id="insertUnorderedList" type="button" ><i class="fa-solid fa-list-ul"></i></button>
+          <button class="AdvBtn" id="indent" type="button" ><i class="fa-solid fa-indent"></i></button>
+          <button class="AdvBtn" id="outdent" type="button" ><i class="fa-solid fa-outdent"></i></button>
+          <button class="AdvBtn" id="undo" type="button" ><i class="fa-solid fa-rotate-left"></i></button>
+          <button class="AdvBtn" id="redo" type="button" ><i class="fa-solid fa-rotate-right"></i></button>
+          <button class="AdvBtn" id="fontSize" type="button" ><i class="fa-solid fa-text-height"></i></button>
+          <!-- Add select numbers only 1 to 7 -->
+          <button class="AdvBtn" id="fontName" type="button" ><i class="fa-solid fa-font"></i></button>
+          <!-- Add select couple of fonts -->
 
-      </div>
+        </div>
+          <svg id="donebtn" class="checkmark" viewBox="0 0 512 512">
+            <path d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z"/>
+          </svg>
 
       </div>
     </div>
