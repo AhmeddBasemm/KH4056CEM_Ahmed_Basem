@@ -242,7 +242,7 @@ body
   --mouse-x: 0;
   --mouse-y: 0;
   display: none;
-  position: fixed;
+  position: absolute;
   margin: 0;
   left: 0;
   top: 0;

@@ -1,5 +1,8 @@
 
 //Global Variables
+var random_margin = ["-5px", "1px", "5px", "10px", "15px", "20px"]
+var random_rotate = ["rotate(3deg)", "rotate(1deg)", "rotate(-1deg)", "rotate(-3deg)", "rotate(-10deg)", "rotate(-5deg)"]
+
 var color_palette = ["#1abc9c", "#f1c40f", "#e67e22", "#e74c3c", "#3498db","#2980b9","#f39c12", "#d35400","#c0392b", "#8e44ad" ,"#2980b9","#27ae60","#16a085"]
 var usedColors = [];
 
@@ -8,12 +11,11 @@ var checkmark = document.getElementById("donebtn")
 var add_sec_btn = document.getElementById("section-add-btn")
 var add_btn = document.getElementsByClassName("sn-add-btn")[0];
 
-
 //Advanced Sticky Note
+var newNoteContentdiv = document.getElementById('newNoteContent');
 var Sec_AdvStickyNote = document.getElementsByClassName("add-sn-div")[0];
 var advancedBtns = document.getElementsByClassName("AdvBtn");
 var currentlyEditedSN;
-
 
 //Drag and Drop
 var currentBoard = null;
@@ -23,17 +25,16 @@ var draggables = [];
 var dragClone;
 
 //Menu
+menu = document.getElementById("contextMenu")
 Editbtn = document.getElementById("Editbtn")
 Delbtn = document.getElementById("Delbtn")
 
-
-// Base Listsners
+// Base Event Listsners
 add_sec_btn.addEventListener("click", CreateSection)
 
 checkmark.addEventListener("click",() => { advancedNote(currentlyEditedSN);})
 
 add_btn.addEventListener("click",CreateNote, Event);
-
 
 Editbtn.addEventListener("click", ()=> {
   advancedNote(currentlyEditedSN);
@@ -45,12 +46,20 @@ Delbtn.addEventListener("click", ()=> {
   contextmenu();
 });
 
+document.addEventListener("click", ()=>
+{
+  if (menu.style.display === "flex") menu.style.display = "none";
+});
+
+document.addEventListener("scroll", ()=>
+{
+  if (menu.style.display === "flex") menu.style.display = "none";
+});
 
 //Advanced Editing Buttons
 Array.from(advancedBtns).forEach(function (btn) {
     btn.addEventListener("click",action, Event);
 });
-
 
 //Create New Board Section
 function CreateSection(){
@@ -68,8 +77,6 @@ function CreateSection(){
     </svg>
     </div>
     `
-
-
   fs = document.createElement("fieldset")
   fs.classList.add("board-FS")
   fs.insertAdjacentHTML("beforeend",inner_HTML)
@@ -127,10 +134,8 @@ function CreateNote(e){
   Drag(sn_div);
 }
 
-function contextmenu()
-{
-  menu = document.getElementById("contextMenu")
-
+//Toggle Context Menu
+function contextmenu(){
     if (menu.style.display === "none")
     {
       menu.style.setProperty('--mouse-x', event.clientX + 'px')
@@ -138,19 +143,15 @@ function contextmenu()
       menu.style.display = "flex";
     }
     else menu.style.display = "none";
-
-
 }
 
 //Get Random Styles
 function Randomstyl() {
 
     //Margin
-    var random_margin = ["-5px", "1px", "5px", "10px", "15px", "20px"]
     margin = random_margin[Math.floor(Math.random() * random_margin.length)];
 
     //Rotation
-    var random_rotate = ["rotate(3deg)", "rotate(1deg)", "rotate(-1deg)", "rotate(-3deg)", "rotate(-10deg)", "rotate(-5deg)"]
     rot = random_rotate[Math.floor(Math.random() * random_rotate.length)];
 
     //Color
@@ -159,7 +160,8 @@ function Randomstyl() {
       color_palette = usedColors;
       usedColors = [];
     }
-    var random_color = color_palette[Math.floor(Math.random() * color_palette.length)];
+
+    random_color = color_palette[Math.floor(Math.random() * color_palette.length)];
     usedColors.push(random_color);
     color_palette.splice(color_palette.indexOf(random_color),1);
 
@@ -167,18 +169,15 @@ function Randomstyl() {
     return {margin:margin, transform:rot, color:random_color};
 }
 
+//Toggle Advanced Editing Mode
 function advancedNote(Sticky_Note) {
-  if (Sticky_Note.target) currentlyEditedSN = Sticky_Note.target;
-
-  var newNoteContentdiv = document.getElementById('newNoteContent');
+  if (Sticky_Note.target && Sticky_Note.target.classList.contains("sn-content")) currentlyEditedSN = Sticky_Note.target;
 
   //Toggle menu Condidtion
   if (Sec_AdvStickyNote.style.display == "none"){
     // Mimic the Small Note
     newNoteContent.innerHTML = currentlyEditedSN.innerHTML;
     newNoteContent.style.backgroundColor = currentlyEditedSN.style.backgroundColor;
-
-    // document.onselectionchange = highlight;
 
     // Open Advanced Menu and Focus
     Sec_AdvStickyNote.style.display = "flex"
@@ -190,9 +189,9 @@ function advancedNote(Sticky_Note) {
     currentlyEditedSN.innerHTML = newNoteContent.innerHTML ;
     Sec_AdvStickyNote.style.display = "none"
   }
-
 }
 
+//For Advanced Editing Buttons
 function action(btn){
   var val = null;
   var command = btn.target.id;
@@ -213,9 +212,9 @@ function Drag(draggable){
     board.addEventListener("dragover", function(e){ onDrag(e, draggable); })
   })
 
-
 }
 
+//When Dragging Begins
 function onDragStart(draggable){
   //Setup the currently dragged sticky Note
   draggable.classList.add("dragging");
@@ -225,6 +224,7 @@ function onDragStart(draggable){
   dragClone = draggable.cloneNode(true);
   dragClone.style.opacity = "0.2"
 }
+
 //create a ghost preview element
 function onDrag(e, draggable){
   //Allow Dropping
@@ -248,6 +248,7 @@ function onDrag(e, draggable){
   }
 }
 
+//On Releasing the Dragged Element
 function onDrop(draggable){
   draggable.classList.remove("dragging");
 
@@ -259,16 +260,17 @@ function onDrop(draggable){
   dragClone.remove();
 }
 
-function position(item,item2bplaced){
+//Helper Function to Make Code smaller
+function position(item,item2Bplaced){
   if (pos.offset > 0)
   {
     //Right
-    try{item.parentNode.insertBefore(item2bplaced, pos.target.nextSibling);}catch{return;}
+    try{item.parentNode.insertBefore(item2Bplaced, pos.target.nextSibling);}catch{return;}
   }
   else
   {
     //Left
-    try{item.parentNode.insertBefore(item2bplaced, pos.target);}catch{return;}
+    try{item.parentNode.insertBefore(item2Bplaced, pos.target);}catch{return;}
   }
 }
 
