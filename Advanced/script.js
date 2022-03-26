@@ -111,10 +111,14 @@ function CreateNote(e){
   Drag(sn_div);
 }
 
-function(e)
+function contextmenu(e)
 {
   menu = document.getElementById("contextMenu")
-  if (menu.style.display === "none")  menu.style.display = "block";
+  if (menu.style.display === "none")
+  {
+     menu.style.display = "block";
+     console.log(e.target);
+  }
   else menu.style.display = "none";
 
   e.preventDefault();
