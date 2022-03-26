@@ -105,8 +105,19 @@ function CreateNote(e){
   //AdvancedEdit
   sn_div.addEventListener("dblclick", advancedNote,Event);
 
+  document.addEventListener('contextmenu', contextmenu , Event);
+
   //Drag and Drop
   Drag(sn_div);
+}
+
+function(e)
+{
+  menu = document.getElementById("contextMenu")
+  if (menu.style.display === "none")  menu.style.display = "block";
+  else menu.style.display = "none";
+
+  e.preventDefault();
 }
 
 //Get Random Styles
