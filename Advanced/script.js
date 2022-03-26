@@ -65,7 +65,7 @@ Array.from(advancedBtns).forEach(function (btn) {
 });
 
 
-// -------------------------------Functions--------------------------------------
+//-------------------------------Functions--------------------------------------
 //Create New Board Section
 function CreateSection(){
   var inner_HTML = `
