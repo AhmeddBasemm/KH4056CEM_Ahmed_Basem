@@ -1,8 +1,9 @@
 
-//Global Variables
+// ---------------------------Global Variables----------------------------------
+
+//Styling Variables
 var random_margin = ["-5px", "1px", "5px", "10px", "15px", "20px"]
 var random_rotate = ["rotate(3deg)", "rotate(1deg)", "rotate(-1deg)", "rotate(-3deg)", "rotate(-10deg)", "rotate(-5deg)"]
-
 var color_palette = ["#1abc9c", "#f1c40f", "#e67e22", "#e74c3c", "#3498db","#2980b9","#f39c12", "#d35400","#c0392b", "#8e44ad" ,"#2980b9","#27ae60","#16a085"]
 var usedColors = [];
 
@@ -29,15 +30,15 @@ menu = document.getElementById("contextMenu")
 Editbtn = document.getElementById("Editbtn")
 Delbtn = document.getElementById("Delbtn")
 
-// Base Event Listsners
+// -------------------------Base Event Listsners--------------------------------
+
+//Adding Buttons
 add_sec_btn.addEventListener("click", CreateSection)
-
-checkmark.addEventListener("click",() => { advancedNote(currentlyEditedSN);})
-
 add_btn.addEventListener("click",CreateNote, Event);
 
+//Context Menu
 Editbtn.addEventListener("click", ()=> {
-  advancedNote(currentlyEditedSN);
+  advancedNote();
   contextmenu();
 });
 
@@ -57,10 +58,14 @@ document.addEventListener("scroll", ()=>
 });
 
 //Advanced Editing Buttons
+checkmark.addEventListener("click",advancedNote)
+
 Array.from(advancedBtns).forEach(function (btn) {
     btn.addEventListener("click",action, Event);
 });
 
+
+// -------------------------------Functions--------------------------------------
 //Create New Board Section
 function CreateSection(){
   var inner_HTML = `
@@ -103,7 +108,7 @@ function CreateNote(e){
   //Styling
   sn_div.classList.add("sn-div-i");
   sn_div.appendChild(sn);
-  sn_div.addEventListener("dblclick", advancedNote, Event);
+
   //Styling
   sn.classList.add("sn-content");
   sty = Randomstyl();
@@ -120,7 +125,11 @@ function CreateNote(e){
   sn.setAttribute("contenteditable", "true");
 
   //AdvancedEdit
-  sn_div.addEventListener("dblclick", advancedNote,Event);
+  sn_div.addEventListener("dblclick", ()=>
+  {
+     currentlyEditedSN = sn;
+     advancedNote()
+  });
 
 
   sn_div.addEventListener('contextmenu', function(e){
@@ -170,8 +179,7 @@ function Randomstyl() {
 }
 
 //Toggle Advanced Editing Mode
-function advancedNote(Sticky_Note) {
-  if (Sticky_Note.target && Sticky_Note.target.classList.contains("sn-content")) currentlyEditedSN = Sticky_Note.target;
+function advancedNote() {
 
   //Toggle menu Condidtion
   if (Sec_AdvStickyNote.style.display == "none"){
