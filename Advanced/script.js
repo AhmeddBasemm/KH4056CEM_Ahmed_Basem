@@ -22,6 +22,10 @@ var pos= {offset:null, target: null};
 var draggables = [];
 var dragClone;
 
+//Menu
+Editbtn = document.getElementById("Editbtn")
+Delbtn = document.getElementById("Delbtn")
+
 
 // Base Listsners
 add_sec_btn.addEventListener("click", CreateSection)
@@ -29,6 +33,17 @@ add_sec_btn.addEventListener("click", CreateSection)
 checkmark.addEventListener("click",() => { advancedNote(currentlyEditedSN);})
 
 add_btn.addEventListener("click",CreateNote, Event);
+
+
+Editbtn.addEventListener("click", ()=> {
+  advancedNote(currentlyEditedSN);
+  contextmenu();
+});
+
+Delbtn.addEventListener("click", ()=> {
+  currentlyEditedSN.parentNode.parentNode.removeChild(currentlyEditedSN.parentNode)
+  contextmenu();
+});
 
 
 //Advanced Editing Buttons
@@ -40,7 +55,6 @@ Array.from(advancedBtns).forEach(function (btn) {
 //Create New Board Section
 function CreateSection(){
   var inner_HTML = `
-    <fieldset class="board-FS">
     <legend class="board-legend editable" data-placeholder="Title" contenteditable ></legend>
 
     <!-- Final Sticky Note -->
@@ -53,22 +67,18 @@ function CreateSection(){
       <line x1="50" y1="32.5" x2="50" y2="67.5" stroke-width="5"></line>
     </svg>
     </div>
+    `
 
 
-  </fieldset>`
+  fs = document.createElement("fieldset")
+  fs.classList.add("board-FS")
+  fs.insertAdjacentHTML("beforeend",inner_HTML)
 
-  document.getElementsByClassName("board-div")[0].innerHTML += inner_HTML
+  document.getElementsByClassName("board-div")[0].insertAdjacentElement("beforeend",fs);
 
   //Add Event listners to all add sn buttons
-  Array.from(document.getElementsByClassName("sn-add-btn")).forEach(function (e) {
-      e.addEventListener("click",CreateNote, Event);
-  });
+  fs.querySelector(":last-child svg").addEventListener("click",CreateNote, Event);
 
-  //When uncommented after adding section all old event listerners get destroyed
-  Array.from(document.getElementsByClassName("sn-div-i")).forEach(function (e) {
-      e.addEventListener("dblclick", advancedNote, Event);
-      Drag(e);
-  });
 }
 
 //Create New Sticky Note
@@ -86,7 +96,7 @@ function CreateNote(e){
   //Styling
   sn_div.classList.add("sn-div-i");
   sn_div.appendChild(sn);
-
+  sn_div.addEventListener("dblclick", advancedNote, Event);
   //Styling
   sn.classList.add("sn-content");
   sty = Randomstyl();
@@ -105,23 +115,31 @@ function CreateNote(e){
   //AdvancedEdit
   sn_div.addEventListener("dblclick", advancedNote,Event);
 
-  document.addEventListener('contextmenu', contextmenu , Event);
+
+  sn_div.addEventListener('contextmenu', function(e){
+    currentlyEditedSN = e.target
+    contextmenu()
+    e.preventDefault();
+  });
+
 
   //Drag and Drop
   Drag(sn_div);
 }
 
-function contextmenu(e)
+function contextmenu()
 {
   menu = document.getElementById("contextMenu")
-  if (menu.style.display === "none")
-  {
-     menu.style.display = "block";
-     console.log(e.target);
-  }
-  else menu.style.display = "none";
 
-  e.preventDefault();
+    if (menu.style.display === "none")
+    {
+      menu.style.setProperty('--mouse-x', event.clientX + 'px')
+      menu.style.setProperty('--mouse-y', event.clientY + 'px')
+      menu.style.display = "flex";
+    }
+    else menu.style.display = "none";
+
+
 }
 
 //Get Random Styles

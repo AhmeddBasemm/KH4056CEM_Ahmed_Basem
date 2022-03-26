@@ -201,14 +201,7 @@ body
 {
   fill: rgba(255,255,255,1);
 }
-/*
-.chkBtn, .chkBtn:focus
-{
-  width: 40px;
-  background: Transparent;
-  border: none;
 
-} */
 .Editing_buttons
 {
   margin-top: 30px;
@@ -245,6 +238,38 @@ body
   height: 100%
 }
 
+.Context {
+  --mouse-x: 0;
+  --mouse-y: 0;
+  display: none;
+  position: fixed;
+  margin: 0;
+  left: 0;
+  top: 0;
+  background-color: white;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  /* The following line is responsible for all the magic */
+  transform: translateX(min(var(--mouse-x), calc(100vw - 100%)))
+             translateY(min(var(--mouse-y), calc(100vh - 100%)));
+}
+.MenuBtn
+{
+  margin: 2px;
+  padding: 5px 0px;
+  outline: none;
+  border: none;
+  /*border-bottom: solid 1px black; */
+  transition: backgroundColor 1s;
+}
+.MenuBtn:hover
+{
+  background-color: lightgrey;
+  outline: none;
+  border: none;
+}
 @media screen and (max-width:620px)
 {
   .board-FS, .sn-div
