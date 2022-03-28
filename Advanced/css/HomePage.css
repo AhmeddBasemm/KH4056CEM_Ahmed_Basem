@@ -1,0 +1,186 @@
+*
+{
+  font-family: "Avenir Next LT pro"
+}
+
+section , body , html , div
+{
+    height:100%;
+    margin:0;
+}
+
+/* -----------------------------------Header-------------------------------- */
+.Header{
+  display: flex;
+  flex-wrap: nowrap;
+  /* background: grey; */
+  height: 50px;
+  margin: 0px;
+}
+.Header .title
+{
+  padding: 0px 5px;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top:auto;
+}
+
+.Header ul
+{
+  height: auto;
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  margin:auto 0px 5px auto;
+}
+.Header ul li
+{
+  padding: 0px 5px;
+}
+.Header ul li a
+{
+  height: 0px;
+  text-decoration: none;
+  color: Black;
+  transition: color 0.2s;
+}
+.Header ul li a:hover
+{
+  color: Dodgerblue;
+}
+/* -----------------------------------Intro Section-------------------------------- */
+.IntroSecBG
+{
+   height:100%;
+   position:relative;
+   background-position:center;
+   background-size:cover;
+   background-repeat:no-repeat;
+   background-attachment:fixed;
+   background-image:url('../images/image1.png');
+   /* background-color: rgb(255, 226, 140); */
+   min-height:100%;
+
+ }
+
+.Intro{
+  position:absolute;
+  top:10%;
+  width:100%;
+  align-items: center;
+  text-align:center;
+  display: flex;
+  flex-direction: column;
+}
+.Intro .WelcomeMessage{
+  /* background-color:#111; */
+  font-size:50px;
+  font-weight: bolder;
+  color:Black;
+  /* padding:0px 20px; */
+}
+.introbrief
+{
+  width: 50%;
+  color: grey;
+  padding: 0px 20px;
+}
+.Goto
+{
+  margin-top: 15px;
+  border-radius: 20px;
+  color: white;
+  padding: 8px;
+  background-color: Dodgerblue;
+  text-decoration: none;
+  border: solid 2px Dodgerblue
+}
+.IntroImg
+{
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  max-width: 90%;
+  max-height: 58%;
+
+}
+
+/* -----------------------------Main Features Sections----------------------- */
+
+.MainSec, #diffrentFeature
+{
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.feature
+{
+  display: flex;
+  align-items: center;
+  padding: 0px;
+}
+
+.Info
+{
+  margin-left: 1%;
+  width: 100%;
+}
+.FeatureTitle
+{
+  font-weight: bold;
+}
+.FeatureDetails
+{
+  font-weight: lighter;
+  width: 60%;
+  color: grey;
+}
+.FetureImg
+{
+  border-radius: 10px;
+  max-width: 60%;
+  margin: 20px 5px
+}
+
+.AdvImgs
+{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.AdvImgs .FetureImg
+{
+  border-radius: 10px;
+  max-width: 45%;
+  margin: 20px 5px
+}
+
+.AddSec
+{
+  height: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.Addfeature
+{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.FAQSec
+{
+  height: auto;
+}

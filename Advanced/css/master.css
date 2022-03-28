@@ -22,6 +22,7 @@ body
 {
   margin: 0px;
   margin-left: auto;
+  font-size:50px;
 }
 
 .svg-settings-btn
@@ -204,13 +205,14 @@ body
 
 .Editing_buttons
 {
+
   margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
 }
+
 .AdvBtn
 {
   margin: 5px;
@@ -251,9 +253,16 @@ body
   flex-wrap: nowrap;
   justify-content: center;
   align-content: center;
+  border-radius: 10px;
   /* The following line is responsible for all the magic */
   transform: translateX(min(var(--mouse-x), calc(100vw - 100%)))
              translateY(min(var(--mouse-y), calc(100vh - 100%)));
+}
+.editicon
+{
+  display: inline;
+  color: red;
+  padding-bottom: 10px;
 }
 .MenuBtn
 {
@@ -261,6 +270,7 @@ body
   padding: 5px 0px;
   outline: none;
   border: none;
+  border-radius: inherit;
   /*border-bottom: solid 1px black; */
   transition: backgroundColor 1s;
 }
