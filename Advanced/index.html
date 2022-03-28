@@ -2,8 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png" href="images/icon.png">
     <title>Brainstorm</title>
-    <link rel="stylesheet" href="/css/HomePage.css">
+    <link rel="stylesheet" href="css/HomePage.css">
 
   </head>
   <body>
@@ -12,9 +13,9 @@
       <!-- Navigation Bar -->
       <nav>
         <div class="Header">
+          <img id="logo" src="images/Logo.png" alt="Logo">
           <span class="title">Brainstorm</span>
           <ul>
-            <li><a href="#">lang</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Login</a></li>
@@ -33,7 +34,6 @@
             <img class="IntroImg"src="images/ScreenShot.png" alt="ScreenShot"/>
           </div>
         </div>
-
         <!-- Main Features Section -->
         <section class="MainSec">
           <div class="feature">
@@ -61,23 +61,30 @@
               <img class="FetureImg" src="images/context.gif" alt="ContextMenu GiF">
             </div>
           </div>
+
         </section>
+        <hr>
         <!-- Additional Features section -->
+        <h1 class="Sec-Heading">Additional Features</h1>
+
         <section class="AddSec">
+
           <div class="Addfeature">
             <img class="FetureImg" id="Responsive" src="images/Responsive.png" alt="Responsive GiF">
             <h2 class="FeatureTitle">Responsive Design</h2>
             <p class="FeatureDetails">Mobile and Desktop</p>
           </div>
+
           <div class="Addfeature">
-            <img class="FetureImg" src="images/Themes.png" alt="Themes GiF">
+            <img class="FetureImg" id="Theme" src="images/Themes.png" alt="Themes GiF">
             <h2 class="FeatureTitle">Make it Yours</h2>
             <p class="FeatureDetails">5 Main Themes</p>
           </div>
+
           <div id="ComingSoon" class="Addfeature">
-            <img class="FetureImg" src="images/Coming soon.jpg" alt="CommingSoon GiF">
+            <img class="FetureImg" id="Coming" src="images/Coming soon.jpg" alt="CommingSoon GiF">
             <h2 class="FeatureTitle">Comming Soon</h2>
-            <ul class="CommingSoonUL">
+            <ul class="FeatureDetails CommingSoonUL">
               <li>Add Images</li>
               <li>GIFS</li>
               <li>Hyperlinks</li>
@@ -85,27 +92,54 @@
             </ul>
           </div>
         </section>
-
+        <hr>
+        <h1 class="Sec-Heading">FAQ</h1>
         <!-- Frequently Asked Questions Section -->
         <section class="FAQSec">
-          <div class="FAQEntry">
-            <h2 class="Question">What are digital Sticky Notes</h2>
-            <p class="Answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <button class="accordion">What are digital Sticky Notes</button>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
-          <div class="FAQEntry">
-            <h2 class="Question">How do you use digital Sticky Notes</h2>
-            <p class="Answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <button class="accordion">How do you use digital Sticky Notes</button>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
         </section>
+
+        <!-- Footer -->
+        <section  class="Footer">
+          <div class="Socials">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <hr>
+            <div class="refrences">
+              <a href="#">github</a>
+            </div>
+            <br><br><br>
+          </div>
+        </section>
+
       </div>
-
-      <!-- Footer -->
-      <div class="Footer">
-        <div class="Socials">
-
-        </div>
-      </div>
-
     </div>
+
+    <script type="text/javascript">
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      /* Toggle between adding and removing the "active" class,
+      to highlight the button that controls the panel */
+      this.classList.toggle("active");
+
+      /* Toggle between hiding and showing the active panel */
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+    }
+    </script>
   </body>
 </html>

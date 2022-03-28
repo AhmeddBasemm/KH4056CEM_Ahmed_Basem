@@ -1,6 +1,6 @@
-*
-{
-  font-family: "Avenir Next LT pro"
+*{
+  font-family: "Avenir Next LT pro";
+  transition: 0.4s;
 }
 
 section , body , html , div
@@ -9,17 +9,22 @@ section , body , html , div
     margin:0;
 }
 
+.Sec-Heading
+{
+  text-align: center;
+}
+
 /* -----------------------------------Header-------------------------------- */
 .Header{
   display: flex;
   flex-wrap: nowrap;
-  /* background: grey; */
-  height: 50px;
+  height: 60px;
   margin: 0px;
 }
+
 .Header .title
 {
-  padding: 0px 5px;
+  padding: 10px 10px;
   font-weight: bold;
   font-size: 30px;
   margin-top:auto;
@@ -32,17 +37,19 @@ section , body , html , div
   list-style-type: none;
   display: flex;
   flex-wrap: nowrap;
-  margin:auto 0px 5px auto;
+  margin:auto 0px 15px auto;
 }
 .Header ul li
 {
-  padding: 0px 5px;
+  padding: 0px 40px;?
 }
 .Header ul li a
 {
   height: 0px;
   text-decoration: none;
+  font-weight: bold;
   color: Black;
+  font-size: 20px;
   transition: color 0.2s;
 }
 .Header ul li a:hover
@@ -59,7 +66,6 @@ section , body , html , div
    background-repeat:no-repeat;
    background-attachment:fixed;
    background-image:url('../images/image1.png');
-   /* background-color: rgb(255, 226, 140); */
    min-height:100%;
 
  }
@@ -83,7 +89,8 @@ section , body , html , div
 .introbrief
 {
   width: 50%;
-  color: grey;
+  font-size: 20px;
+  color: rgb(89, 89, 89);
   padding: 0px 20px;
 }
 .Goto
@@ -91,30 +98,45 @@ section , body , html , div
   margin-top: 15px;
   border-radius: 20px;
   color: white;
+  font-weight: bold;
+  font-size: 20px;
   padding: 8px;
   background-color: Dodgerblue;
   text-decoration: none;
-  border: solid 2px Dodgerblue
+  border: solid 2px Dodgerblue;
+  transition: color 1s, background 1s;
 }
+
+.Goto:hover
+{
+  background: white;
+  color: Dodgerblue;
+}
+
 .IntroImg
 {
   border-radius: 10px;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
+  margin: 50px auto 10px auto;
   max-width: 90%;
   max-height: 58%;
-
+  transition: transform 1s;
 }
+
+.IntroImg:hover
+{
+  transform: scale(1.1)
+}
+
+
 
 /* -----------------------------Main Features Sections----------------------- */
 
-.MainSec, #diffrentFeature
+.MainSec
 {
   height: auto;
   display: flex;
   flex-direction: column;
+  margin: 0px 5%;
 }
 .feature
 {
@@ -123,44 +145,69 @@ section , body , html , div
   padding: 0px;
 }
 
-.Info
-{
-  margin-left: 1%;
-  width: 100%;
-}
 .FeatureTitle
 {
+  padding: 0px;
+  margin: 0px;
+  font-size: 35px;
   font-weight: bold;
 }
+
+.Info
+{
+  margin-bottom: 5%;
+  width: 100%;
+}
+
 .FeatureDetails
 {
   font-weight: lighter;
   width: 60%;
   color: grey;
+  font-size: 20px;
 }
 .FetureImg
 {
   border-radius: 10px;
   max-width: 60%;
-  margin: 20px 5px
+  margin: 20px 0px;
 }
 
+#diffrentFeature
+{
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#diffrentFeature .Info
+{
+  margin: 0%;
+  width: 100%;
+}
+
+#diffrentFeature .Info .FeatureDetails
+{
+  width: 100%;
+}
 .AdvImgs
 {
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
+  width: 100%
 }
 
 .AdvImgs .FetureImg
 {
   border-radius: 10px;
-  max-width: 45%;
-  margin: 20px 5px
+  max-width: 50%;
+  margin: 20px 20px;
 }
 
-.AddSec
+/* --------------------------Additional Features Sections-------------------- */
+.AddSec , .Addfeature
 {
   height: auto;
   display: flex;
@@ -171,16 +218,126 @@ section , body , html , div
 
 .Addfeature
 {
-  width: 30%;
+  width: 25%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+}
+
+.Addfeature .FetureImg
+{
+  border-radius: 10px;
+  margin: 0px;
+}
+
+#Responsive
+{
+  max-width: 35%;
+}
+#Coming
+{
+  max-width: 85%;
+}
+
+.Addfeature .FeatureTitle
+{
+  font-size: 30px;
+  margin: 10px;
 
 }
+.Addfeature .FeatureDetails
+{
+  font-size: 18px;
+}
+.CommingSoonUL
+{
+  width: 50%;
+  color: grey;
+  align-self: left;
+  text-align: left;
+}
+
+/* --------------------------Frequently Asked Questions---------------------- */
+
 
 .FAQSec
 {
   height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  margin-top:1%;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 90%;
+  font-size: 20px;
+  text-align: left;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  transition: 0.4s display 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  font-size: 18px;
+  padding: 0 18px;
+  background-color: white;
+  width: 90%;
+  display: none;
+  overflow: hidden;
+}
+
+.Footer
+{
+  height: auto;
+  margin-top: 20px;
+  background-color: #050038;
+}
+.Footer div hr
+{
+  height: 1px;
+  background-color: rgb(159, 212, 74);
+  width: 90%;
+  margin: 0px auto;
+}
+.Footer div p , .Footer div div
+{
+  color: white;
+  width: 90%;
+  padding: 50px 0px;
+  margin: 0px auto;
+}
+
+@media screen and (max-width: 700px) {
+
+  .FeatureTitle
+  {
+    margin-top: 20%;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .AdvImgs
+  {
+    flex-direction: column;
+  }
+  .AdvImgs .FetureImg
+  {
+
+    max-width: 100%;
+    margin: 20px 20px;
+  }
+
+
 }
