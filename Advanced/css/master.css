@@ -2,11 +2,11 @@
 {
   transition: transform 0.4s;
 }
+
 body
 {
   background-color: #eee0bb;
   font-family: "Indie Flower";
-  /* font-family: "Avenir Next LT Pro"; */
 }
 
 .container
@@ -15,7 +15,7 @@ body
   flex-direction: column;
 }
 
-/* Header */
+/* ---------------------------------- Header----------------------------------*/
 .header-div
 {
   display: flex;
@@ -46,7 +46,7 @@ body
   fill: black
 }
 
-/* Board */
+/* ---------------------------------Board------------------------------------ */
 .board-FS
 {
   position: relative;
@@ -65,8 +65,6 @@ body
   font-size: 25px;
   padding: 4px 10px;
   border: 1px solid;
-
-  /* border-bottom: 0px; */
 }
 
 #close
@@ -86,7 +84,7 @@ body
 
 
 
-/* Sticky Note */
+/* ------------------------------Sticky Note--------------------------------- */
  .sn-add-btn
 {
   width: 250px;
@@ -113,25 +111,6 @@ body
   padding: none;
   display: flex;
   flex-wrap: wrap;
-}
-
-@keyframes fadeIn {
-  0% {transform: scale(0);}
-  100% {transform: scale(1);}
-}
-@keyframes fadeout {
-  0% {transform: scale(1);}
-  100% {transform: scale(0);}
-}
-
-.ExitAnim
-{
-  animation: fadeout .5s;
-}
-
-.animated
-{
-  animation: fadeIn .5s;
 }
 
 .sn-div-i
@@ -163,8 +142,27 @@ body
 {
   background-color: rgba(10,10,10,.1);
 }
+/* -----------------------------Animation------------------------------------- */
+@keyframes fadeIn {
+  0% {transform: scale(0);}
+  100% {transform: scale(1);}
+}
+@keyframes fadeout {
+  0% {transform: scale(1);}
+  100% {transform: scale(0);}
+}
+.ExitAnim
+{
+  animation: fadeout .5s;
+}
 
-/* New Section */
+.animated
+{
+  animation: fadeIn .5s;
+}
+
+
+/* ---------------------------------New Board--------------------------------- */
 .section-add-btn
 {
    height: 45px;
@@ -193,9 +191,9 @@ body
     padding-top: 110px;
 }
 
-/* New Section div */
 
-/* New Sticky Note div*/
+
+/*------------------------------ New Sticky Note div--------------------------*/
 .add-sn-div
 {
   position: fixed;
@@ -218,7 +216,7 @@ body
   min-height: 100vh;
 }
 
-/* NEW Sticky Note */
+/* -----------------------------Advanced Editing----------------------------- */
 .add-sn-div .sn-content
 {
   width: 350px;
@@ -277,7 +275,7 @@ body
   width: 100%;
   height: 100%
 }
-
+/* ------------------------------Context Menu-------------------------------- */
 .Context {
   --mouse-x: 0;
   --mouse-y: 0;
@@ -318,6 +316,7 @@ body
   outline: none;
   border: none;
 }
+/* --------------------------Resoonsiveness---------------------------------- */
 @media screen and (max-width:620px)
 {
   .board-FS, .sn-div
