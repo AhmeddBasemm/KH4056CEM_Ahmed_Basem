@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+
+    <!-- MetaData -->
     <meta charset="utf-8">
     <meta name="description" content="CourseWork 1 202000188">
     <meta name="keywords" content="HTML, CSS, JavaScript, CourseWork 1, Sticky Notes">
     <meta name="author" content="Ahmed Basem">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link rel="shortcut icon" type="image/png" href="images/icon.png">
+
+    <!-- Title & Icon -->
     <title>Brainstorm</title>
+    <link rel="shortcut icon" type="image/png" href="images/icon.png">
 
-
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/master.css">
     <link id="Theme" rel="stylesheet" href="css/NewTheme.css">
 
+    <!-- Google Font and Icon kit API -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower">
     <script src="https://kit.fontawesome.com/4a82e10df4.js" crossorigin="anonymous"></script>
 
   </head>
+
   <body>
 
     <div class="container">
-
       <!-- Header Division -->
       <div class="header-div">
+
         <!-- Title -->
         <h1 class="main-title-h1">Brainstorm</h1>
+
         <!-- Settings Icon/Button -->
         <svg  id="settings-btn" class="svg-settings-btn" viewBox="0 0 512 512">
           <path d="M495.9 166.6C499.2 175.2 496.4 184.9 489.6 191.2L446.3 230.6C447.4 238.9 448 247.4 448 256C448 264.6 447.4 273.1 446.3 281.4L489.6 320.8C496.4 327.1 499.2 336.8 495.9 345.4C491.5 357.3 486.2 368.8 480.2 379.7L475.5 387.8C468.9 398.8 461.5 409.2 453.4 419.1C447.4 426.2 437.7 428.7 428.9 425.9L373.2 408.1C359.8 418.4 344.1 427 329.2 433.6L316.7 490.7C314.7 499.7 307.7 506.1 298.5 508.5C284.7 510.8 270.5 512 255.1 512C241.5 512 227.3 510.8 213.5 508.5C204.3 506.1 197.3 499.7 195.3   490.7L182.8 433.6C167 427 152.2 418.4 138.8 408.1L83.14 425.9C74.3 428.7 64.55 426.2 58.63 419.1C50.52 409.2 43.12 398.8 36.52 387.8L31.84 379.7C25.77 368.8 20.49 357.3 16.06 345.4C12.82 336.8 15.55 327.1 22.41 320.8L65.67 281.4C64.57 273.1 64 264.6 64 256C64 247.4 64.57 238.9 65.67 230.6L22.41 191.2C15.55 184.9 12.82 175.3 16.06 166.6C20.49 154.7 25.78 143.2 31.84 132.3L36.51 124.2C43.12 113.2 50.52 102.8 58.63 92.95C64.55 85.8 74.3 83.32 83.14 86.14L138.8 103.9C152.2 93.56 167 84.96   182.8 78.43L195.3 21.33C197.3 12.25 204.3 5.04 213.5 3.51C227.3 1.201 241.5 0 256 0C270.5 0 284.7 1.201 298.5 3.51C307.7 5.04 314.7 12.25 316.7 21.33L329.2 78.43C344.1 84.96 359.8 93.56 373.2 103.9L428.9 86.14C437.7 83.32 447.4 85.8 453.4 92.95C461.5 102.8 468.9 113.2 475.5 124.2L480.2 132.3C486.2 143.2 491.5 154.7 495.9 166.6V166.6zM256 336C300.2 336 336 300.2 336 255.1C336 211.8 300.2 175.1 256 175.1C211.8 175.1 176 211.8 176 255.1C176 300.2 211.8 336 256 336z"/>
@@ -33,10 +40,14 @@
 
       <!-- base board -->
       <div class="board-div ">
+        <!-- Intial Board -->
         <fieldset class="board-FS">
           <legend class="board-legend editable" data-placeholder="Title" contenteditable ></legend>
-          <!-- Final Sticky Note -->
+
+          <!--Sticky Note Section -->
           <div class="sn-div" style="padding-top: 5px">
+
+            <!-- Here Goes the Sticky Notes -->
 
             <!-- Add Sticky Note Button Icon -->
             <svg id="sn-add-btn" class="sn-add-btn" viewBox="0 0 100 100">
@@ -44,14 +55,15 @@
               <line x1="32.5" y1="50" x2="67.5" y2="50" stroke-width="5"></line>
               <line x1="50" y1="32.5" x2="50" y2="67.5" stroke-width="5"></line>
             </svg>
+
           </div>
+
+          <!-- Delete Board Button -->
           <span id='close'><i id="x-icon" class="fa-regular fa-circle-xmark"></i></span>
-
         </fieldset>
-
       </div>
 
-
+      <!-- New Board Area -->
       <div class="add-section-div">
         <!-- Add board Note Button Icon -->
         <svg id="section-add-btn" class="section-add-btn" viewBox="0 0 100 100">
@@ -61,11 +73,11 @@
         </svg>
       </div>
 
-      <!-- Add Sticky Note -->
+      <!-- New Sticky Note Window -->
       <div class="add-sn-div" style="display:none;">
         <div id="newNoteContent" class="sn-content"  name="sn-content" contenteditable></div>
-        <!-- <button type="button" id="donebtn" class="chkBtn"><i class=" fa-solid fa-check"></i></button> -->
 
+        <!-- Edit Ribbon -->
         <div class="Editing_buttons">
           <button class="AdvBtn" id="bold" type="button" ><i class="fa-solid fa-bold"></i></button>
           <button class="AdvBtn" id="underline" type="button" ><i class="fa-solid fa-underline"></i></button>
@@ -78,24 +90,22 @@
           <button class="AdvBtn" id="undo" type="button" ><i class="fa-solid fa-rotate-left"></i></button>
           <button class="AdvBtn" id="redo" type="button" ><i class="fa-solid fa-rotate-right"></i></button>
           <button class="AdvBtn" id="fontSize" type="button" ><i class="fa-solid fa-text-height"></i></button>
-          <!-- <input type="text" name="" value=""> -->
-          <!-- Add select numbers only 1 to 7 -->
           <button class="AdvBtn" id="fontName" type="button" ><i class="fa-solid fa-font"></i></button>
-          <!-- Add select couple of fonts -->
-
         </div>
-          <svg id="donebtn" class="checkmark" viewBox="0 0 512 512">
-            <path d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z"/>
-          </svg>
+
+        <!-- Finalize Edit Button -->
+        <svg id="donebtn" class="checkmark" viewBox="0 0 512 512">
+          <path d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z"/>
+        </svg>
 
       </div>
+
+      <!-- Right Click Menu -->
+      <div id ="contextMenu" class="Context" style="display:none;">
+        <button type="button" id="Editbtn" class="MenuBtn" name="button"><i class="fa-solid fa-pencil editicon"></i>Advanced Editing</button>
+      <button type="button" id="Delbtn"  class="MenuBtn" name="button"><i class="fa-solid fa-trash-can editicon"></i>Delete</button>
     </div>
 
-
-
-    <div id ="contextMenu" class="Context" style="display:none;">
-      <button type="button" id="Editbtn" class="MenuBtn" name="button"><i class="fa-solid fa-pencil editicon"></i>Advanced Editing</button>
-      <button type="button" id="Delbtn"  class="MenuBtn" name="button"><i class="fa-solid fa-trash-can editicon"></i>Delete</button>
     </div>
 
     <script type="text/javascript" src="script.js"></script>
