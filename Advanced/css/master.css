@@ -1,3 +1,7 @@
+*
+{
+  transition: transform 0.4s;
+}
 body
 {
   background-color: #eee0bb;
@@ -45,6 +49,7 @@ body
 /* Board */
 .board-FS
 {
+  position: relative;
   background-color: white;
   margin: 0px;
   display: flex;
@@ -63,6 +68,22 @@ body
 
   /* border-bottom: 0px; */
 }
+
+#close
+{
+  position: absolute;
+  top: -15px;
+  right: 1%;
+  transform: scale(1.5);
+  color: white;
+  transition: color .4s
+}
+
+#close:hover
+{
+    color: red;
+}
+
 
 
 /* Sticky Note */
@@ -86,14 +107,31 @@ body
   resize: none;
   box-shadow:0px 10px 24px 0px rgba(0,0,0,0.75);
 }
-
 .sn-div
 {
   margin: none;
   padding: none;
-
   display: flex;
   flex-wrap: wrap;
+}
+
+@keyframes fadeIn {
+  0% {transform: scale(0);}
+  100% {transform: scale(1);}
+}
+@keyframes fadeout {
+  0% {transform: scale(1);}
+  100% {transform: scale(0);}
+}
+
+.ExitAnim
+{
+  animation: fadeout .5s;
+}
+
+.animated
+{
+  animation: fadeIn .5s;
 }
 
 .sn-div-i

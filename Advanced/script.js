@@ -35,6 +35,7 @@ Delbtn = document.getElementById("Delbtn")
 //Adding Buttons
 add_sec_btn.addEventListener("click", CreateSection)
 add_btn.addEventListener("click",CreateNote, Event);
+document.getElementById("close").addEventListener("click", deleteBoard, Event )
 
 //Context Menu
 Editbtn.addEventListener("click", ()=> {
@@ -43,7 +44,13 @@ Editbtn.addEventListener("click", ()=> {
 });
 
 Delbtn.addEventListener("click", ()=> {
-  currentlyEditedSN.parentNode.parentNode.removeChild(currentlyEditedSN.parentNode)
+
+  currentlyEditedSN.classList.add("ExitAnim");
+
+  setTimeout(() => {
+    currentlyEditedSN.parentNode.parentNode.removeChild(currentlyEditedSN.parentNode)
+  }, 475)
+
   contextmenu();
 });
 
@@ -66,6 +73,16 @@ Array.from(advancedBtns).forEach(function (btn) {
 
 
 //-------------------------------Functions--------------------------------------
+
+function deleteBoard (e){
+  if (confirm("Are you Sure that u want to delete this board")){
+    e.target.parentNode.parentNode.classList.add("ExitAnim");
+    setTimeout(() => {
+    e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode); return false;
+  },475)
+  }
+}
+
 //Create New Board Section
 function CreateSection(){
   var inner_HTML = `
@@ -81,15 +98,26 @@ function CreateSection(){
       <line x1="50" y1="32.5" x2="50" y2="67.5" stroke-width="5"></line>
     </svg>
     </div>
+    <span id='close'><i id="x-icon" class="fa-regular fa-circle-xmark"></i></span>
     `
   fs = document.createElement("fieldset")
   fs.classList.add("board-FS")
+  fs.classList.add("animated")
   fs.insertAdjacentHTML("beforeend",inner_HTML)
+
+  fs.querySelector("#close").addEventListener("click", deleteBoard, Event)
+  // closebtn = document.createElement("span")
+  // closebtn.onclick = this.parentNode.parentNode.removeChild(this.parentNode); return false;
+  // fs.insertAdjacentElement("beforeend",closebtn);
 
   document.getElementsByClassName("board-div")[0].insertAdjacentElement("beforeend",fs);
 
   //Add Event listners to all add sn buttons
   fs.querySelector(":last-child svg").addEventListener("click",CreateNote, Event);
+
+  setTimeout(() => {
+  fs.classList.remove("animated");
+},475)
 
 }
 
@@ -103,6 +131,7 @@ function CreateNote(e){
   //Drag
   sn_div.classList.add("draggable");
   sn_div.classList.add("sortable");
+  sn_div.classList.add("animated");
   sn_div.setAttribute("draggable", "true");
 
   //Styling
@@ -213,6 +242,7 @@ function action(btn){
 function Drag(draggable){
   boards = document.getElementsByClassName('board-FS');
 
+
   draggable.addEventListener("dragstart",() => { onDragStart(draggable); });
   draggable.addEventListener("dragend",() =>{ onDrop(draggable); });
 
@@ -224,6 +254,7 @@ function Drag(draggable){
 
 //When Dragging Begins
 function onDragStart(draggable){
+  draggable.classList.remove("animated");
   //Setup the currently dragged sticky Note
   draggable.classList.add("dragging");
   currentBoard = draggable.parentNode.parentNode;
