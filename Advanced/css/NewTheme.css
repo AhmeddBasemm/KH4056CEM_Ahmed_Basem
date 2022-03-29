@@ -1,6 +1,7 @@
 body
 {
-  background-color: #34495e ;
+  /* background-color: #34495e ; */
+  background-color: #0b5fb6 ;
 }
 
 .main-title-h1 , .svg-settings-btn
@@ -11,15 +12,22 @@ body
 
 .board-legend
 {
-  background-color: #2c3e50;
+  background-color: #476481;
+  /* background-color: #2c3e50; */
   color: white;
-  border-color: black;
+  border-color: white;
+}
+
+.board-legend:focus
+{
+  background-color: #476481;
 }
 
 .board-FS
 {
   border-radius: 12px;
-  background-color: #7f8c8d;
+  background-color: #ebebeb;
+  /* background-color: #7f8c8d; */
 }
 
 

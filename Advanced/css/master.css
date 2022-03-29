@@ -73,9 +73,9 @@ body
 {
   position: absolute;
   top: -15px;
-  right: 1%;
+  right: 0.5%;
   transform: scale(1.5);
-  color: white;
+  color: black;
   transition: color .4s
 }
 
