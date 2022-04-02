@@ -82,8 +82,6 @@ body
     color: red;
 }
 
-
-
 /* ------------------------------Sticky Note--------------------------------- */
  .sn-add-btn
 {
@@ -316,7 +314,7 @@ body
   outline: none;
   border: none;
 }
-/* --------------------------Resoonsiveness---------------------------------- */
+/* --------------------------Responsiveness---------------------------------- */
 @media screen and (max-width:620px)
 {
   .board-FS, .sn-div
@@ -329,5 +327,4 @@ body
   {
     margin: 10px 20px;
   }
-
 }
