@@ -1,0 +1,3 @@
+Copy Week 7 File
+Open XAMPP Intsallation Folder
+Paste Week 7 install hddocs
